@@ -37,14 +37,14 @@ st.metric(
     label="현재일자",
     value=now.strftime("%Y-%m-%d"))
 st.write("## The 좋은밥상")
-df = pd.DataFrame(
-    [[37.4682657, 126.886182]],
-    columns=['lat', 'lon'])
-st.map(df, zoom=14)
+# df = pd.DataFrame(
+#     [[37.4682657, 126.886182]],
+#     columns=['lat', 'lon'])
+# st.map(df, zoom=14)
 show_menus("_xfWxfCxj")
 st.write("## 우림구내식당")
-df = pd.DataFrame(
-    [[37.4668171, 126.888310]],
-    columns=['lat', 'lon'])
-st.map(df, zoom=14)
+# df = pd.DataFrame(
+#     [[37.4668171, 126.888310]],
+#     columns=['lat', 'lon'])
+# st.map(df, zoom=14)
 show_menus("_ixcNxexj")
