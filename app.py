@@ -1,5 +1,7 @@
 import streamlit as st
 import requests
+from datetime import datetime
+import pytz
 
 def get_posts(id):
     url = f"https://pf-wapi.kakao.com/web/profiles/{id}/posts"
@@ -25,6 +27,8 @@ def show_menus(store_id):
     cols = st.columns(min(3, len(images)))
     for i, col in enumerate(cols[:3]):
         col.image(images[i])
+
+st.write(datetime.now(pytz.timezone("Asia/Seoul")))
 
 st.write("# 6300원의 행복")
 st.write("## The 좋은밥상")
