@@ -37,6 +37,7 @@ st.metric(
     value=now.strftime("%Y-%m-%d"))
 st.write("## The 좋은밥상")
 
+st.write(API_KEY)
 my_map = """
     <div id="map"></div>
     <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey={API_KEY}"></script>
