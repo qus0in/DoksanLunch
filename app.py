@@ -23,7 +23,7 @@ def show_menus(store_id):
         for m in media:
             images.append(m['xlarge_url'])
     cols = st.columns(len(images))
-    for i, col in enumerate(cols):
+    for i, col in enumerate(cols)[:3]:
         col.image(images[i])
 
 st.write("# 6300원의 행복")
