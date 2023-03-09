@@ -30,7 +30,7 @@ col2.write("## 우림구내식당")
 store2 = "_ixcNxexj"
 posts = get_posts(store2)
 post_ids = [p['id'] for p in posts['items']]
-for post_id in posts_ids:
+for post_id in post_ids:
     media = get_media(store2, post_id)
     for m in media:
         col2.image(m['xlarge_url'])
