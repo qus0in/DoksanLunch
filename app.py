@@ -28,9 +28,9 @@ def show_menus(store_id):
     for i, col in enumerate(cols[:3]):
         col.image(images[i])
 
-st.write(datetime.now(pytz.timezone("Asia/Seoul")))
 
 st.write("# 6300원의 행복")
+st.metric(datetime.now(pytz.timezone("Asia/Seoul")))
 st.write("## The 좋은밥상")
 show_menus("_xfWxfCxj")
 st.write("## 우림구내식당")
