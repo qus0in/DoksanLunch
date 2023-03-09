@@ -8,6 +8,10 @@ col1.write("## The 좋은밥상")
 url = "https://pf-wapi.kakao.com/web/profiles/_xfWxfCxj/posts"
 req = requests.get(url)
 json = req.json()
-st.write(json['items'][0]['id'])
+# st.write(json['items'][0]['id'])
+id = json['items'][0]['id']
+req = requests.get(f"{url}/{id}")
+json = req.json()
+st.write(json['items'])
 
 col2.write("## 우림구내식당")
