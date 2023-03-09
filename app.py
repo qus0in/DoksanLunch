@@ -38,10 +38,20 @@ st.metric(
 st.write("## The 좋은밥상")
 
 code1 = """
+    <style>
+        #map {
+            width: 500px;
+            height: 400px;
+        }
+    </style>
     <div id="map"></div>
+"""
+
+code2 = f"""
     <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey={API_KEY}"></script>
 """
-code2 = """
+
+code3 = """
     <script>
         var container = document.getElementById('map');
         var options = {
@@ -62,7 +72,7 @@ code2 = """
 
 html(code1)
 html(code2)
-
+html(code3)
 
 show_menus("_xfWxfCxj")
 st.write("## 우림구내식당")
