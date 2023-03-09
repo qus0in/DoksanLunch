@@ -14,20 +14,17 @@ def get_media(id, post_id):
     media = json["media"]
     return media
 
-def show_menus(col, store_id):
+def show_menus(store_id):
     posts = get_posts(store_id)
     post_ids = [p['id'] for p in posts['items']]
+    images = []
     for post_id in post_ids:
         media = get_media(store_id, post_id)
         for m in media:
-            col.image(m['xlarge_url'])
+            images.append(m['xlarge_url'])
 
 st.write("# 6300원의 행복")
 st.write("## The 좋은밥상")
+st.write(show_menus("_xfWxfCxj"))
 st.write("## 우림구내식당")
-
-col1, col2 = st.columns(2)
-
-show_menus(col1, "_xfWxfCxj")
-
-show_menus(col2, "_ixcNxexj")
+st.write(show_menus("_ixcNxexj"))
