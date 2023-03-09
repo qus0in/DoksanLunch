@@ -29,5 +29,5 @@ for m in media:
 col2.write("## 우림구내식당")
 store2 = "_ixcNxexj"
 posts = get_posts(store2)
-post_ids = [p for p in posts['items']]
+post_ids = [p['id'] for p in posts['items']]
 col2.write(post_ids)
