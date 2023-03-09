@@ -2,6 +2,7 @@ import streamlit as st
 import requests
 from datetime import datetime
 import pytz
+from streamlit.components.v1 import html
 
 def get_posts(id):
     url = f"https://pf-wapi.kakao.com/web/profiles/{id}/posts"
@@ -28,13 +29,35 @@ def show_menus(store_id):
     for i, col in enumerate(cols[:3]):
         col.image(images[i])
 
-
 st.write("# 6300원의 행복")
 now = datetime.now(pytz.timezone("Asia/Seoul"))
 st.metric(
     label="현재일자",
     value=now.strftime("%Y-%m-%d"))
 st.write("## The 좋은밥상")
+
+API_KEY = st.secrets["KAKAO_API_KEY"]
+html_code = f"""
+    <div id="map"></div>
+    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey={API_KEY}"></script>
+    <script>
+        var container = document.getElementById('map');
+        var options = {
+            center: new kakao.maps.LatLng(37.506502, 127.053617),
+            level: 3
+        };
+
+        var map = new kakao.maps.Map(container, options);
+
+        var markerPosition  = new kakao.maps.LatLng(37.506502, 127.053617);
+
+        var marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
+        marker.setMap(map);
+    </script>
+"""
+
 show_menus("_xfWxfCxj")
 st.write("## 우림구내식당")
 show_menus("_ixcNxexj")
