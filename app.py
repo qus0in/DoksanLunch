@@ -36,31 +36,10 @@ st.metric(
     label="현재일자",
     value=now.strftime("%Y-%m-%d"))
 st.write("## The 좋은밥상")
-
-st.write(API_KEY)
-my_map = """
-    <div id="map"></div>
-    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey={API_KEY}"></script>
-    <script>
-        var container = document.getElementById('map');
-        var options = {
-            center: new kakao.maps.LatLng(37.506502, 127.053617),
-            level: 3
-        };
-
-        var map = new kakao.maps.Map(container, options);
-
-        var markerPosition  = new kakao.maps.LatLng(37.506502, 127.053617);
-
-        var marker = new kakao.maps.Marker({
-            position: markerPosition
-        });
-        marker.setMap(map);
-    </script>
-""".replace("{API_KEY}", API_KEY)
-
-html(my_map)
-
+df = pd.DataFrame(
+    [[37.4682657, 126.886182]],
+    columns=['lat', 'lon'])
+st.map(df)
 show_menus("_xfWxfCxj")
 st.write("## 우림구내식당")
 show_menus("_ixcNxexj")
