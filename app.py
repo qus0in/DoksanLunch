@@ -21,7 +21,6 @@ def show_menus(col, store_id):
         media = get_media(store_id, post_id)
         for m in media:
             col.image(m['xlarge_url'])
-    col.write(post_ids)
 
 st.write("# 6300원의 행복")
 
