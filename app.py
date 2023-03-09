@@ -12,6 +12,6 @@ json = req.json()
 id = json['items'][0]['id']
 req = requests.get(f"{url}/{id}")
 json = req.json()
-st.write(json)
+st.write(json["media"])
 
 col2.write("## 우림구내식당")
