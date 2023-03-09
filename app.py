@@ -37,26 +37,32 @@ st.metric(
     value=now.strftime("%Y-%m-%d"))
 st.write("## The 좋은밥상")
 
-html_code = f"""
+code1 = """
     <div id="map"></div>
     <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey={API_KEY}"></script>
+"""
+code2 = """
     <script>
         var container = document.getElementById('map');
-        var options = \{
+        var options = {
             center: new kakao.maps.LatLng(37.506502, 127.053617),
             level: 3
-        \};
+        };
 
         var map = new kakao.maps.Map(container, options);
 
         var markerPosition  = new kakao.maps.LatLng(37.506502, 127.053617);
 
-        var marker = new kakao.maps.Marker(\{
+        var marker = new kakao.maps.Marker({
             position: markerPosition
-        \});
+        });
         marker.setMap(map);
     </script>
 """
+
+html(code1)
+html(code2)
+
 
 show_menus("_xfWxfCxj")
 st.write("## 우림구내식당")
