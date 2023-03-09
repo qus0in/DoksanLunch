@@ -12,6 +12,8 @@ json = req.json()
 id = json['items'][0]['id']
 req = requests.get(f"{url}/{id}")
 json = req.json()
-col1.write(json["media"])
+media = json["media"]
+for m in media:
+    col1.image(m['xlarge_url'])
 
 col2.write("## 우림구내식당")
