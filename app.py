@@ -30,7 +30,7 @@ def show_menus(store_id):
 
 
 st.write("# 6300원의 행복")
-st.metric(datetime.now(pytz.timezone("Asia/Seoul")))
+st.metric(label="현재일자", value=datetime.now(pytz.timezone("Asia/Seoul")))
 st.write("## The 좋은밥상")
 show_menus("_xfWxfCxj")
 st.write("## 우림구내식당")
