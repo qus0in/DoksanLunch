@@ -2,6 +2,7 @@ import streamlit as st
 import requests
 from datetime import datetime
 import pytz
+import pandas as pd
 from streamlit.components.v1 import html
 API_KEY = st.secrets["KAKAO_API_KEY"]
 
