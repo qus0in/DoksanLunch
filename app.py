@@ -40,7 +40,7 @@ st.write("## The 좋은밥상")
 df = pd.DataFrame(
     [[37.4682657, 126.886182]],
     columns=['lat', 'lon'])
-st.map(df, zoom=15)
+st.map(df, zoom=12)
 show_menus("_xfWxfCxj")
 st.write("## 우림구내식당")
 show_menus("_ixcNxexj")
