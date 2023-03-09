@@ -37,21 +37,9 @@ st.metric(
     value=now.strftime("%Y-%m-%d"))
 st.write("## The 좋은밥상")
 
-code1 = """
-    <style>
-        #map {
-            width: 500px;
-            height: 400px;
-        }
-    </style>
+my_map = """
     <div id="map"></div>
-"""
-
-code2 = f"""
     <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey={API_KEY}"></script>
-"""
-
-code3 = """
     <script>
         var container = document.getElementById('map');
         var options = {
@@ -68,11 +56,9 @@ code3 = """
         });
         marker.setMap(map);
     </script>
-"""
+""".replace("{API_KEY}", API_KEY)
 
-html(code1)
-html(code2)
-html(code3)
+html(my_map)
 
 show_menus("_xfWxfCxj")
 st.write("## 우림구내식당")
