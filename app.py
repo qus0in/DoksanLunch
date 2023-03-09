@@ -22,10 +22,12 @@ def show_menus(store_id):
         media = get_media(store_id, post_id)
         for m in media:
             images.append(m['xlarge_url'])
-    return images
+    cols = st.columns(len(images))
+    for i, col in enumerate(cols):
+        col.image(images[i])
 
 st.write("# 6300원의 행복")
 st.write("## The 좋은밥상")
-st.write(show_menus("_xfWxfCxj"))
+show_menus("_xfWxfCxj")
 st.write("## 우림구내식당")
-st.write(show_menus("_ixcNxexj"))
+show_menus("_ixcNxexj")
