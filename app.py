@@ -4,7 +4,6 @@ from datetime import datetime
 import pytz
 import pandas as pd
 from streamlit.components.v1 import html
-API_KEY = st.secrets["KAKAO_API_KEY"]
 
 def get_posts(id):
     url = f"https://pf-wapi.kakao.com/web/profiles/{id}/posts"
