@@ -30,7 +30,12 @@ def show_menus(store_id):
     for i, col in enumerate(cols[:3]):
         col.image(images[i])
 
-st.write("# 6300원의 행복")
+st.set_page_config(
+    page_title="구내식당 갈까?",
+    page_icon=":plate_with_cutlery:",
+    # layout="wide",
+)
+st.title("# 6300원의 행복")
 now = datetime.now(pytz.timezone("Asia/Seoul"))
 st.metric(
     label="현재일자",
@@ -41,9 +46,9 @@ st.write("## The 좋은밥상")
 #     columns=['lat', 'lon'])
 # st.map(df, zoom=14)
 show_menus("_xfWxfCxj")
-st.write("## 우림구내식당")
-# df = pd.DataFrame(
-#     [[37.4668171, 126.888310]],
-#     columns=['lat', 'lon'])
-# st.map(df, zoom=14)
-show_menus("_ixcNxexj")
+# st.write("## 우림구내식당")
+# # df = pd.DataFrame(
+# #     [[37.4668171, 126.888310]],
+# #     columns=['lat', 'lon'])
+# # st.map(df, zoom=14)
+# show_menus("_ixcNxexj")
