@@ -32,10 +32,10 @@ def show_menus(store_id):
 
 st.set_page_config(
     page_title="구내식당 갈까?",
-    page_icon=":plate_with_cutlery:",
+    page_icon="🍽️",
     # layout="wide",
 )
-st.title("# 6300원의 행복")
+st.title("6300원의 행복")
 now = datetime.now(pytz.timezone("Asia/Seoul"))
 st.metric(
     label="현재일자",
